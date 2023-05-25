@@ -41,10 +41,9 @@ WHERE C.especie = E.nome  ;
 SELECT DISTINCT C.nome, MAX(C.altura)
 FROM Personagens as C, Especies as E
 WHERE C.especie = E.nome
-ORDER BY C.altura;
+ORDER BY C.altura ;
 -- B7
 SELECT DISTINCT N.fabricante, COUNT(DISTINCT V.nome), COUNT(DISTINCT N.nome)
 FROM Veiculos as V, Naves as N
 GROUP BY V.fabricante, N.fabricante
-HAVING V.fabricante = N.fabricante
-ORDER BY  ;
+HAVING V.fabricante = N.fabricante ;
