@@ -43,7 +43,8 @@ FROM Personagens as C, Especies as E
 WHERE C.especie = E.nome
 ORDER BY C.altura;
 -- B7
-SELECT 
-FROM 
-WHERE
+SELECT DISTINCT N.fabricante, COUNT(DISTINCT V.nome), COUNT(DISTINCT N.nome)
+FROM Veiculos as V, Naves as N
+GROUP BY V.fabricante, N.fabricante
+HAVING V.fabricante = N.fabricante
 ORDER BY  ;
