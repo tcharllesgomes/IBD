@@ -36,7 +36,7 @@ ORDER BY C.nome ;
 -- B0
 SELECT C.nome, C.planeta, E.planeta
 FROM Personagens as C, Especies as E
-WHERE C.especie = E.nome  ;
+WHERE C.especie = E.nome AND E.nome <> 'Humano' AND C.planeta <> E.planeta  ;
 -- B3
 SELECT DISTINCT C.nome, MAX(C.altura)
 FROM Personagens as C, Especies as E
