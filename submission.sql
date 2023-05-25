@@ -24,9 +24,10 @@ FROM Personagens AS P, Especies AS E
 ON P.especie = E.nome
 WHERE (P.altura > E.altura_media) AND E.tempo_de_vida_medio < 70 ;
 -- B2
-SELECT N.fabricante, COUNT(DISTINCT V.nome), COUNT(DISTINCT N.nome) 
-FROM Naves AS N, Veiculos AS V
-WHERE N.fabricante = V.fabricante ;
+SELECT DISTINCT N.fabricante, COUNT(DISTINCT V.nome), COUNT(DISTINCT N.nome)
+FROM Veiculos as V, Naves as N
+GROUP BY V.fabricante, N.fabricante
+HAVING V.fabricante = N.fabricante ;
 -- B6
 SELECT DISTINCT C.nome, C.altura
 FROM Personagens AS C, Planetas AS P, Especies AS E
@@ -43,7 +44,7 @@ FROM Personagens as C, Especies as E
 WHERE C.especie = E.nome
 ORDER BY C.altura ;
 -- B7
-SELECT DISTINCT N.fabricante, COUNT(DISTINCT V.nome), COUNT(DISTINCT N.nome)
-FROM Veiculos as V, Naves as N
-GROUP BY V.fabricante, N.fabricante
-HAVING V.fabricante = N.fabricante ;
+SELECT DISTINCT N.fabricante, COUNT(DISTINCT N.nome), COUNT(DISTINCT V.nome)
+FROM Naves AS N, Veiculos AS V
+GROUP BY N.fabricante, V.fabricante
+HAVING COUNT(DISTINCT N.nome) > COUNT(DISTINCT V.nome) ;
