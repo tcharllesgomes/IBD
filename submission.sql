@@ -42,7 +42,8 @@ SELECT DISTINCT C.nome, MAX(C.altura)
 FROM Personagens as C, Especies as E
 WHERE C.especie = E.nome
 ORDER BY C.altura;
--- B1
-SELECT N.nome, N.modelo, MAX(N.capacidade_de_carga)
-FROM Naves as N
-ORDER BY N.capacidade_de_carga ;
+-- B7
+SELECT 
+FROM 
+WHERE
+ORDER BY  ;
